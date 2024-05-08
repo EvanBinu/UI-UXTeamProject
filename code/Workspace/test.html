@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Manager</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+    }
+    section {
+        float: left;
+        width: 50%;
+        padding: 20px;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+    input[type="text"], select {
+        width: calc(100% - 20px);
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Task Manager</h1>
+</header>
+<section id="workspace">
+    <h2>Workspace</h2>
+    <input type="text" id="workspaceName" placeholder="Enter workspace name">
+    <select id="projectType">
+        <option value="Web Development">Web Development</option>
+        <option value="Mobile App Development">Mobile App Development</option>
+        <option value="Data Analysis">Data Analysis</option>
+        <option value="Design">Design</option>
+        <!-- Add more project types as needed -->
+    </select>
+    <h3>Add People from Friends List:</h3>
+    <select id="friendList" multiple>
+        <!-- Friend items will be added dynamically here -->
+    </select>
+    <button onclick="createWorkspace()">Create Workspace</button>
+    <h3>Your Workspaces:</h3>
+    <ul id="workspaceList">
+        <!-- Workspace items will be added dynamically here -->
+    </ul>
+</section>
+<section id="friends">
+    <h2>Friends</h2>
+    <input type="text" id="friendInput" placeholder="Enter friend's name">
+    <button onclick="addFriend()">Add Friend</button>
+    <h3>Your Friends:</h3>
+    <ul id="friendListDisplay">
+        <!-- Friend items will be added dynamically here -->
+    </ul>
+</section>
+<script>
+    // Sample friend list
+    var friends = ["John", "Jane", "Doe", "Alice", "Bob"];
+
+    // Populate the friend list
+    var friendListDisplay = document.getElementById("friendListDisplay");
+    friends.forEach(function(friend) {
+        var li = document.createElement("li");
+        li.textContent = friend;
+        friendListDisplay.appendChild(li);
+    });
+
+    function createWorkspace() {
+        var workspaceName = document.getElementById("workspaceName").value;
+        var projectType = document.getElementById("projectType").value;
+        var selectedFriends = [];
+        var friendSelect = document.getElementById("friendList");
+        for (var i = 0; i < friendSelect.options.length; i++) {
+            if (friendSelect.options[i].selected) {
+                selectedFriends.push(friendSelect.options[i].value);
+            }
+        }
+        if (workspaceName.trim() !== "") {
+            var workspaceList = document.getElementById("workspaceList");
+            var li = document.createElement("li");
+            li.textContent = "Workspace: " + workspaceName + " (Type: " + projectType + ", Collaborators: " + selectedFriends.join(", ") + ")";
+            workspaceList.appendChild(li);
+            document.getElementById("workspaceName").value = "";
+        } else {
+            alert("Please enter a valid workspace name.");
+        }
+    }
+    function addFriend() {
+        var friendName = document.getElementById("friendInput").value;
+        if (friendName.trim() !== "") {
+            var friendListDisplay = document.getElementById("friendListDisplay");
+            var li = document.createElement("li");
+            li.textContent = friendName;
+            friendListDisplay.appendChild(li);
+            document.getElementById("friendInput").value = "";
+        } else {
+            alert("Please enter a valid friend's name.");
+        }
+    }
+</script>
+</body>
+</html>
