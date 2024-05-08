@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "UI-UXTeamProject",
+			"path": "../One/UI-UXTeamProject"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "UI-UXTeamProject"
+	}
+}
