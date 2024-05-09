@@ -176,7 +176,7 @@ body{
     gap: 20px;
 }
 
-/* top start */
+
 .container .right .top {
     position: relative;
     width: 100%;
@@ -189,7 +189,7 @@ body{
     border-radius: 20px;
 }
 
-/* searchBx start */
+
 .container .right .top .searchBx {
     position: relative;
     display: flex;
@@ -242,7 +242,7 @@ body{
     display: none;
 }
 
-/* user start */
+
 .container .right .top .user {
     position: relative;
     display: flex;
@@ -347,9 +347,7 @@ body{
     opacity: 1;
     visibility: visible;
 }
-/* user end */
-/* top end */
-/* main start */
+
 .container .right main {
     position: relative;
     width: 100%;
@@ -360,7 +358,7 @@ body{
     gap: 20px;
 }
 
-/* projectCard start */
+
 .container .right main .projectCard {
     position: relative;
     width: 100%;
@@ -572,8 +570,7 @@ body{
     font-size: 1.1em;
     color: #f5b5f5;
 }
-/* projectTop end */
-/* projectCard2 start */
+
 .container .right main .projectCard.projectCard2 {
     grid-row: 4 / 7;
 }
@@ -595,8 +592,7 @@ body{
 .container .right main .projectCard.projectCard2 .task .line::before {
     background: #f5c75f;
 }
-/* projectCard2 end */
-/* myTasks start */
+
 .container .right main .myTasks {
     position: relative;
     width: 100%;
@@ -748,8 +744,7 @@ body{
 .container .right main .myTasks .tasks ul li .tasksStar.half {
     color: #f5c75f;
 }
-/* myTasks end */
-/* timeline start */
+
 .container .right main .timeline {
     position: relative;
     width: 100%;
@@ -876,8 +871,7 @@ body{
 .container .right main .timeline .timelineVideos ul li:first-child .timelineTime {
     color: #000;
 }
-/* timeline end */
-/* calendar start */
+
 .container .right main .calendar {
     position: relative;
     width: 100%;
@@ -1000,8 +994,7 @@ body{
     background: #6577ff;
     color: #fff;
 }
-/* calendar end */
-/* messages start */
+
 .container .right main .messages {
     position: relative;
     width: 100%;
@@ -1075,9 +1068,7 @@ body{
     color: #999;
     font-size: 0.8em;
 }
-/* messages end */
 
-/* Responsive */
 @media (max-width: 1176px) {
     .container .left {
         position: absolute;
