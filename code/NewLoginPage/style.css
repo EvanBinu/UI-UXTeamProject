@@ -81,7 +81,7 @@ body{
   }
   
   .type1::after {
-    content: "Thanks";
+    content: "Sign In";
     height: 50px;
     width: 150px;
     background-color: #008080;
@@ -96,6 +96,10 @@ body{
     align-items: center;
     justify-content: center;
     transition: all 0.5s ease-in-out;
+  }
+
+  .type2::after {
+    content: "Sign Up"
   }
   
   .type1::before {
