@@ -1,7 +1,10 @@
 .navigationbar{
+  
   display: flex;
   justify-content: center;
-  
+  background-color: #d8dbfe;
+  padding-bottom: 20px;
+  z-index: 1000;
 } 
 body{
   background: linear-gradient(#f4dbfb,#d8dbfe);
@@ -180,9 +183,10 @@ transform: scale(0.95);
   border: 3px solid #fff;
 }
 
-.creators-container {
+#creators-container {
   display: flex;
-  justify-content: center;
+  justify-content: center;  
+  padding-left: 20vw;
 }
 
 .creators {
@@ -211,9 +215,10 @@ transform: scale(0.95);
  /*Image*/
  .card-avatar {
   width: 100px;
-  border-radius: 80%;
+  border-radius: 50%;
   transition: transform .2s ease;
   margin-bottom: 1rem;
+  
  }
  
  
