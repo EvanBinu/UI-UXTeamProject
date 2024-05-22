@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./stylework.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class = "container">
@@ -19,11 +20,15 @@
                 </div>        
             </div>
             <div class="workspace-elements">
-                <ul>
-                    <li class = "work-elemet">1 workspace Friend</li>
-                    <li class = "work-elemet">2 workspace Friend</li>
-                    <li class = "work-elemet">3 workspace Friend</li>
-                </ul>
+                <div id="content" class=>
+                    <h1>Original Content</h1>
+                    <a href="../Main/index.html"><p>Workspace</p></a>
+                </div>
+                <div id="copyContainer" >
+                    <h1>Copied Content</h1>
+                    <!-- Cloned content will be appended here -->
+                </div>
+                <button id="cloneButton">Clone Content</button>
             </div>
         </div>
         <div class="right">
@@ -37,5 +42,13 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+            $('#cloneButton').click(function(){
+                var clonedContent = $('#content').clone();
+                $('#copyContainer').append(clonedContent);
+            });
+        });
+    </script>
 </body>
 </html>
