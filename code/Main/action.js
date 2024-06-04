@@ -32,3 +32,8 @@ window.onclick = (e) => {
         body.style.overflow = '';
     }
 };
+document.getElementById('checkbox').addEventListener('change', function() {
+    if (this.checked) {
+        window.location.href = "../Calender/calendar.html";
+    }
+});

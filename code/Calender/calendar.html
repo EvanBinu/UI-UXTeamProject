@@ -1,0 +1,137 @@
+
+<head>
+    <link rel="stylesheet" href="./calendar.css">
+</head>
+<body>
+
+    <!-- Calendar wrapper -->
+    <div class="wrapper">
+        <!-- Calendar header -->
+        <header>
+            <!-- Current date display -->
+            <p class="current-date"></p>
+            <!-- Navigation icons -->
+            <div class="icons">
+                <span id="prev" class="material-symbols-rounded"><</span>
+                <span id="next" class="material-symbols-rounded">></span>
+            </div>
+        </header>
+        <!-- Calendar container -->
+        <div class="calendar">
+            <!-- Days of the week -->
+            <ul class="weeks">
+                <!-- Days of the week (Sunday to Saturday) -->
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+            </ul>
+            <!-- Calendar days -->
+            <ul class="days">
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li>31</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Selecting the element that will display the current date
+        const currentDateElement = document.querySelector(".current-date");
+        // Selecting the container for the calendar days
+        const daysList = document.querySelector(".days");
+        // Selecting the previous month button
+        const prevButton = document.getElementById("prev");
+        // Selecting the next month button
+        const nextButton = document.getElementById("next");
+        // Getting the current date
+        let currentDate = new Date();
+        // Extracting the current year from the current date
+        let currentYear = currentDate.getFullYear();
+        // Extracting the current month (0-11) from the current date
+        let currentMonth = currentDate.getMonth();
+        // Function to generate the calendar
+        function generateCalendar() {
+            // Displaying the current month and year
+            currentDateElement.textContent = new Date(currentYear, currentMonth).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+            // Clearing the existing content in the days list
+            daysList.innerHTML = "";
+            // Getting the day of the week of the first day of the current month
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            // Getting the total number of days in the current month
+            const totalDays = new Date(currentYear, currentMonth + 1, 0).getDate();
+            // Loop to generate days from the previous month (if any)
+            for (let i = 0; i < firstDay; i++) {
+                const li = document.createElement("li");
+                li.classList.add("inactive");
+                li.textContent = new Date(currentYear, currentMonth, -firstDay + i + 1).getDate();
+                daysList.appendChild(li);
+            }
+            // Loop to generate days for the current month
+            for (let i = 1; i <= totalDays; i++) {
+                const li = document.createElement("li");
+                li.textContent = i;
+                // Adding the 'today' class to highlight today's date
+                if (currentYear === currentDate.getFullYear() && currentMonth === currentDate.getMonth() && i === currentDate.getDate()) {
+                    li.classList.add("today");
+                }
+                daysList.appendChild(li);
+            }
+        }
+        // Event listener for the previous month button
+        prevButton.addEventListener("click", () => {
+            currentMonth -= 1;
+            if (currentMonth < 0) {
+                currentYear -= 1;
+                currentMonth = 11;
+            }
+            // Generating the calendar for the previous month
+            generateCalendar();
+        });
+        // Event listener for the next month button
+        nextButton.addEventListener("click", () => {
+            currentMonth += 1;
+            if (currentMonth > 11) {
+                currentYear += 1;
+                currentMonth = 0;
+            }
+            // Generating the calendar for the next month
+            generateCalendar();
+        });
+        // Initial generation of the calendar
+        generateCalendar();
+    </script>
+</body>

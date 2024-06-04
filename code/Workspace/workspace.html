@@ -1,34 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./stylework.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* The actual popup */
+        .popup .popuptext {
+            visibility: hidden;
+            width: 160px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -80px;
+        }
+
+        /* Popup arrow */
+        .popup .popuptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <div class = "container">
+    <div class="container">
         <div class="left">
             <div class="title">
                 <div class="logo">
-                    <img src="workspace.png">                    
+                    <img src="workspace.png">
                 </div>
                 <div class="heading">
                     <h1>Workspaces</h1>
-                </div>        
+                </div>
             </div>
             <div class="workspace-elements">
                 <div id="content" class=>
-                    <h1>Original Content</h1>
-                    <a href="../Main/index.html"><p>Workspace</p></a>
+                    <div class="popup" onclick="myFunction()">
+                        <span class="popuptext" id="myPopup">A Simple Popup!</span>
+                        <a  class="popup" href="../Main/index.html">
+                            <p>Workspace</p>
+                        </a>
+                    </div>
+                    
+                    
                 </div>
-                <div id="copyContainer" >
-                    <h1>Copied Content</h1>
+                <div id="copyContainer">
+                    
                     <!-- Cloned content will be appended here -->
                 </div>
-                <button id="cloneButton">Clone Content</button>
+                <button id="cloneButton" class="popup" onclick="myFunction()">Clone Content</button>
             </div>
         </div>
         <div class="right">
@@ -43,12 +119,19 @@
         </div>
     </div>
     <script>
-        $(document).ready(function(){
-            $('#cloneButton').click(function(){
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+        $(document).ready(function () {
+            $('#cloneButton').click(function () {
                 var clonedContent = $('#content').clone();
                 $('#copyContainer').append(clonedContent);
+
+
             });
         });
     </script>
 </body>
+
 </html>
