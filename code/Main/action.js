@@ -37,3 +37,21 @@ document.getElementById('checkbox').addEventListener('change', function() {
         window.location.href = "../Calender/calendar.html";
     }
 });
+function editMessage(button) {
+    let messageContent = button.previousElementSibling;
+    let editField = button.nextElementSibling;
+
+    editField.value = messageContent.querySelector('span').innerText;
+    editField.style.display = 'block';
+    editField.focus();
+    messageContent.style.display = 'none';
+}
+
+function saveMessage(input) {
+    let messageContent = input.previousElementSibling.previousElementSibling;
+    let newMessage = input.value;
+
+    messageContent.querySelector('span').innerText = newMessage;
+    messageContent.style.display = 'block';
+    input.style.display = 'none';
+}
