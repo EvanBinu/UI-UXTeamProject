@@ -37,3 +37,34 @@ document.getElementById('checkbox').addEventListener('change', function() {
         window.location.href = "../Calender/calendar.html";
     }
 });
+function toggleTask(element) {
+    element.classList.toggle('done');
+    element.classList.toggle('notDone');
+
+    let taskName = element.nextElementSibling;
+    taskName.classList.toggle('tasksLine');
+
+    if (element.classList.contains('done')) {
+        element.innerHTML = '<span class="material-symbols-outlined">check</span>';
+    } else {
+        element.innerHTML = '';
+    }
+}
+function editMessage(button) {
+    let messageContent = button.previousElementSibling;
+    let editField = button.nextElementSibling;
+
+    editField.value = messageContent.querySelector('span').innerText;
+    editField.style.display = 'block';
+    editField.focus();
+    messageContent.style.display = 'none';
+}
+
+function saveMessage(input) {
+    let messageContent = input.previousElementSibling.previousElementSibling;
+    let newMessage = input.value;
+
+    messageContent.querySelector('span').innerText = newMessage;
+    messageContent.style.display = 'block';
+    input.style.display = 'none';
+}
