@@ -31,6 +31,8 @@
   img{
   margin-left: 10vmax;
   }
+
+
   .titletext{
   float:right;
   width: 60vmax;
@@ -352,3 +354,26 @@
   display: none;
   }
   }
+  .panel h1,
+.panel h2,
+.panel h3 {
+    font-size: 24px; /* Default font size */
+}
+
+@media only screen and (max-width: 768px) {
+    /* Adjust font size for smaller screens */
+    .panel h1,
+    .panel h2,
+    .panel h3 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Further adjust font size for even smaller screens */
+    .panel h1,
+    .panel h2,
+    .panel h3 {
+        font-size: 16px;
+    }
+}
