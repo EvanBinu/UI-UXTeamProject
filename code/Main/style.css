@@ -563,6 +563,13 @@ body{
     cursor: pointer;
 }
 
+.container .right main .projectCard .due input[type="date"] {
+    border: none;
+    background: none;
+    color: #f5b5f5;
+    font-size: 1.1em;
+    cursor: pointer;
+}
 .container .right main .projectCard .due h2 {
     padding: 0px 10px;
     border: 2px solid #f5b5f5;
