@@ -1068,7 +1068,7 @@ body{
     color: #999;
     font-size: 0.8em;
 }
-.container .right main .messages ..editButton {
+.container .right main .messages .editButton {
     margin-left: auto;
     cursor: pointer;
     padding: 5px 10px;
