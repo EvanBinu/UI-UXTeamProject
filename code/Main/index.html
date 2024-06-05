@@ -227,16 +227,12 @@
                         <ul>
                             <li>
                                 <span class="tasksIconName">
-                                    <span class="tasksIcon done">
-                                        <span class="material-symbols-outlined">
-                                            check
-                                        </span>
-                                    </span>
+                                    <span class="tasksIcon notDone" onclick="toggleTask(this)"></span>
                                     <span class="tasksName">
                                         My Task 1
                                     </span>
                                 </span>
-                                <span class="tasksStar full">
+                                <span class="tasksStar half">
                                     <span class="material-symbols-outlined">
                                         star
                                     </span>
@@ -244,7 +240,7 @@
                             </li>
                             <li>
                                 <span class="tasksIconName">
-                                    <span class="tasksIcon notDone"></span>
+                                    <span class="tasksIcon notDone" onclick="toggleTask(this)"></span>
                                     <span class="tasksName">
                                         My Task 2
                                     </span>
@@ -257,7 +253,7 @@
                             </li>
                             <li>
                                 <span class="tasksIconName">
-                                    <span class="tasksIcon notDone"></span>
+                                    <span class="tasksIcon notDone" onclick="toggleTask(this)"></span>
                                     <span class="tasksName">
                                         My Task 3
                                     </span>
@@ -270,7 +266,7 @@
                             </li>
                             <li>
                                 <span class="tasksIconName">
-                                    <span class="tasksIcon done">
+                                    <span class="tasksIcon done" onclick="toggleTask(this)">
                                         <span class="material-symbols-outlined">
                                             check
                                         </span>
@@ -287,7 +283,7 @@
                             </li>
                             <li>
                                 <span class="tasksIconName">
-                                    <span class="tasksIcon done">
+                                    <span class="tasksIcon done" onclick="toggleTask(this)">
                                         <span class="material-symbols-outlined">
                                             check
                                         </span>
@@ -304,7 +300,7 @@
                             </li>
                             <li>
                                 <span class="tasksIconName">
-                                    <span class="tasksIcon notDone"></span>
+                                    <span class="tasksIcon notDone" onclick="toggleTask(this)"></span>
                                     <span class="tasksName">
                                         My Task 6
                                     </span>
@@ -317,7 +313,7 @@
                             </li>
                             <li>
                                 <span class="tasksIconName">
-                                    <span class="tasksIcon notDone"></span>
+                                    <span class="tasksIcon notDone" onclick="toggleTask(this)"></span>
                                     <span class="tasksName">
                                         My Task 7
                                     </span>
@@ -485,7 +481,7 @@
                             <img src="../images/man (1).png" alt="img1">
                         </div>
                         <div class="messageContent">
-                            <h2>Marvin McKinney<br><span>Part 1 completed </span></h2>
+                            <h2>Marvin McKinney<br><span>Part1 completed </span></h2>
                         </div>
                         <button class="editButton" onclick="editMessage(this)">Edit</button>
                         <input type="text" class="editField" onblur="saveMessage(this)">
@@ -518,7 +514,7 @@
                             <img src="../images/woman.png" alt="img4">
                         </div>
                         <div class="messageContent">
-                            <h2>Darlene Robertson<br><span>Don't disturb 🤫🧏‍♂️</span></h2>
+                            <h2>Darlene Robertson<br><span>Don't disturb🤫</span></h2>
                         </div>
                         <button class="editButton" onclick="editMessage(this)">Edit</button>
                         <input type="text" class="editField" onblur="saveMessage(this)">

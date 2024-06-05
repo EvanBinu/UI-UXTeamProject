@@ -37,6 +37,19 @@ document.getElementById('checkbox').addEventListener('change', function() {
         window.location.href = "../Calender/calendar.html";
     }
 });
+function toggleTask(element) {
+    element.classList.toggle('done');
+    element.classList.toggle('notDone');
+
+    let taskName = element.nextElementSibling;
+    taskName.classList.toggle('tasksLine');
+
+    if (element.classList.contains('done')) {
+        element.innerHTML = '<span class="material-symbols-outlined">check</span>';
+    } else {
+        element.innerHTML = '';
+    }
+}
 function editMessage(button) {
     let messageContent = button.previousElementSibling;
     let editField = button.nextElementSibling;
