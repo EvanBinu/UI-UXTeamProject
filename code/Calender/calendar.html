@@ -10,6 +10,7 @@
         <header>
             <!-- Current date display -->
             <p class="current-date"></p>
+            <button class="goBackBtn" onclick="goBack()">Go Back</button>
             <!-- Navigation icons -->
             <div class="icons">
                 <span id="prev" class="material-symbols-rounded"><</span>
@@ -133,5 +134,10 @@
         });
         // Initial generation of the calendar
         generateCalendar();
+        function goBack() {
+            window.history.back();
+            updateCurrentURL();
+        }
+        
     </script>
 </body>
