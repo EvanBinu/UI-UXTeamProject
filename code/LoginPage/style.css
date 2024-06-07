@@ -22,11 +22,7 @@ body{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-<<<<<<< HEAD:code/NewLoginPage/style.css
     width: 91vw;
-=======
-    width: 92vw;
->>>>>>> 30c7fd4eaca88e4c5bc857340a3aca21303f3beb:code/LoginPage/style.css
     height: 87.4vh;
     max-width: 100%;
     min-height: 480px;
